@@ -299,24 +299,27 @@ async function analyse() {
 }
 
 async function fetchHF(text) {
+  // Replace with your real token from https://huggingface.co/settings/tokens
+  const HF_TOKEN = "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"; 
+
   const r = await fetch(`https://api-inference.huggingface.co/models/${MODEL_ID}`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ inputs: text, options: { wait_for_model: true } })
+    headers: { 
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${HF_TOKEN}` // This fixes most connection errors
+    },
+    body: JSON.stringify({ 
+      inputs: text, 
+      options: { wait_for_model: true } 
+    })
   });
 
-  if (!r.ok) throw new Error("API Failure");
-  const data = await r.json();
-  const raw = Array.isArray(data[0]) ? data[0] : data;
-  
-  const map = { "Negative": 0, "Neutral": 0, "Positive": 0 };
-  raw.forEach(d => {
-    let l = d.label;
-    if (l === "LABEL_0" || l.toLowerCase().includes("neg")) map["Negative"] = d.score;
-    else if (l === "LABEL_1" || l.toLowerCase().includes("neu")) map["Neutral"] = d.score;
-    else if (l === "LABEL_2" || l.toLowerCase().includes("pos")) map["Positive"] = d.score;
-  });
-  return map;
+  if (!r.ok) {
+     const errData = await r.json();
+     console.error("HF Error Detail:", errData);
+     throw new Error("API Failure");
+  }
+  return await r.json();
 }
 
 function renderResults(text, scores) {
