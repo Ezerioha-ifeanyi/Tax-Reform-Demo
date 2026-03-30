@@ -40,7 +40,6 @@
     flex-direction: column;
   }
 
-  /* ── Header ── */
   header {
     background: var(--ink);
     padding: 0 40px;
@@ -74,7 +73,6 @@
     letter-spacing: .04em;
   }
 
-  /* ── Hero ── */
   .hero {
     background: var(--ink);
     padding: 64px 40px 72px;
@@ -91,11 +89,7 @@
       radial-gradient(ellipse 50% 80% at 80% 30%, rgba(16,185,129,.10) 0%, transparent 70%);
     pointer-events: none;
   }
-  .hero-flag {
-    font-size: 3rem;
-    margin-bottom: 16px;
-    filter: drop-shadow(0 4px 16px rgba(0,0,0,.4));
-  }
+  .hero-flag { font-size: 3rem; margin-bottom: 16px; filter: drop-shadow(0 4px 16px rgba(0,0,0,.4)); }
   .hero h1 {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
@@ -108,331 +102,80 @@
     position: relative;
   }
   .hero h1 em { color: #60a5fa; font-style: normal; }
-  .hero p {
-    color: #94a3b8;
-    font-size: .95rem;
-    max-width: 480px;
-    margin: 0 auto;
-    line-height: 1.7;
-    position: relative;
-  }
+  .hero p { color: #94a3b8; font-size: .95rem; max-width: 480px; margin: 0 auto; line-height: 1.7; position: relative; }
 
-  /* ── Main layout ── */
-  main {
-    max-width: 880px;
-    width: 100%;
-    margin: -32px auto 60px;
-    padding: 0 24px;
-    position: relative;
-    flex: 1;
-  }
+  main { max-width: 880px; width: 100%; margin: -32px auto 60px; padding: 0 24px; position: relative; flex: 1; }
 
-  /* ── Analyser card ── */
-  .card {
-    background: var(--card);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    border: 1px solid var(--border);
-    overflow: hidden;
-  }
-  .card-header {
-    padding: 22px 28px 16px;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .card-header h2 {
-    font-family: 'Syne', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--ink);
-  }
+  .card { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--border); overflow: hidden; }
+  .card-header { padding: 22px 28px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+  .card-header h2 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--ink); }
   .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
   .card-body { padding: 24px 28px 28px; }
 
-  /* ── Textarea + button ── */
   .input-wrap { position: relative; }
   textarea {
-    width: 100%;
-    height: 120px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    padding: 14px 16px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: .95rem;
-    color: var(--ink);
-    background: #fcfcfe;
-    resize: vertical;
-    outline: none;
-    transition: border-color .2s, box-shadow .2s;
-    line-height: 1.6;
+    width: 100%; height: 120px; border: 1.5px solid var(--border); border-radius: 10px;
+    padding: 14px 16px; font-family: 'DM Sans', sans-serif; font-size: .95rem; color: var(--ink);
+    background: #fcfcfe; resize: vertical; outline: none; transition: all .2s; line-height: 1.6;
   }
-  textarea:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(37,99,235,.08);
-  }
-  textarea::placeholder { color: var(--ink3); }
+  textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(37,99,235,.08); }
 
-  .char-count {
-    position: absolute;
-    bottom: 10px;
-    right: 12px;
-    font-size: .72rem;
-    color: var(--ink3);
-    pointer-events: none;
-  }
+  .char-count { position: absolute; bottom: 10px; right: 12px; font-size: .72rem; color: var(--ink3); pointer-events: none; }
+  .controls { margin-top: 14px; display: flex; gap: 10px; align-items: center; }
+  .btn { font-family: 'DM Sans', sans-serif; font-size: .9rem; font-weight: 500; border: none; border-radius: 8px; cursor: pointer; padding: 10px 22px; transition: all .18s; }
+  .btn-primary { background: var(--accent); color: #fff; flex: 1; }
+  .btn-primary:disabled { background: #93b4f5; cursor: not-allowed; }
+  .btn-secondary { background: var(--surface); color: var(--ink2); border: 1.5px solid var(--border); }
 
-  .controls {
-    margin-top: 14px;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-  }
-  .btn {
-    font-family: 'DM Sans', sans-serif;
-    font-size: .9rem;
-    font-weight: 500;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    padding: 10px 22px;
-    transition: all .18s;
-  }
-  .btn-primary {
-    background: var(--accent);
-    color: #fff;
-    flex: 1;
-  }
-  .btn-primary:hover { background: var(--accent2); transform: translateY(-1px); }
-  .btn-primary:active { transform: translateY(0); }
-  .btn-primary:disabled { background: #93b4f5; cursor: not-allowed; transform: none; }
-  .btn-secondary {
-    background: var(--surface);
-    color: var(--ink2);
-    border: 1.5px solid var(--border);
-  }
-  .btn-secondary:hover { border-color: var(--ink3); }
+  .examples-label { font-size: .78rem; font-weight: 500; color: var(--ink3); text-transform: uppercase; letter-spacing: .06em; margin: 22px 0 10px; }
+  .examples-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+  .example-chip { font-size: .8rem; padding: 6px 13px; border-radius: 20px; border: 1.5px solid var(--border); background: var(--card); color: var(--ink2); cursor: pointer; transition: all .15s; }
+  .example-chip:hover { border-color: var(--accent); color: var(--accent); background: #eff6ff; }
 
-  /* ── Examples ── */
-  .examples-label {
-    font-size: .78rem;
-    font-weight: 500;
-    color: var(--ink3);
-    text-transform: uppercase;
-    letter-spacing: .06em;
-    margin: 22px 0 10px;
-  }
-  .examples-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .example-chip {
-    font-size: .8rem;
-    padding: 6px 13px;
-    border-radius: 20px;
-    border: 1.5px solid var(--border);
-    background: var(--card);
-    color: var(--ink2);
-    cursor: pointer;
-    transition: all .15s;
-    white-space: nowrap;
-    max-width: 260px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .example-chip:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    background: #eff6ff;
-  }
-
-  /* ── Results ── */
-  .results {
-    margin-top: 28px;
-    display: none;
-    animation: fadeUp .35s ease both;
-  }
+  .results { margin-top: 28px; display: none; animation: fadeUp .35s ease both; }
   .results.visible { display: block; }
 
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(10px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-  .result-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-
-  /* verdict card */
-  .verdict {
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
+  .result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .verdict { border-radius: 10px; padding: 20px; display: flex; flex-direction: column; gap: 6px; }
   .verdict.neg { background: var(--neg-bg); border: 1.5px solid #f5c0c0; }
   .verdict.neu { background: var(--neu-bg); border: 1.5px solid #f0dc9a; }
   .verdict.pos { background: var(--pos-bg); border: 1.5px solid #9be0be; }
 
-  .verdict-label {
-    font-size: .72rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: .08em;
-  }
-  .verdict.neg .verdict-label { color: var(--neg); }
-  .verdict.neu .verdict-label { color: var(--neu); }
-  .verdict.pos .verdict-label { color: var(--pos); }
+  .verdict-label { font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+  .verdict-sentiment { font-family: 'Syne', sans-serif; font-size: 1.7rem; font-weight: 800; line-height: 1; }
+  .verdict-conf { font-size: .82rem; color: var(--ink2); margin-top: 4px; }
 
-  .verdict-sentiment {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.7rem;
-    font-weight: 800;
-    line-height: 1;
-  }
-  .verdict.neg .verdict-sentiment { color: var(--neg); }
-  .verdict.neu .verdict-sentiment { color: var(--neu); }
-  .verdict.pos .verdict-sentiment { color: var(--pos); }
+  .provision-card { border-radius: 10px; padding: 20px; background: #f0f4ff; border: 1.5px solid #ccd9ff; display: flex; flex-direction: column; gap: 8px; }
+  .provision-title { font-size: .72rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .08em; }
+  .provision-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .provision-tag { font-size: .78rem; padding: 4px 11px; border-radius: 20px; background: rgba(37,99,235,.1); color: var(--accent2); font-weight: 500; border: 1px solid rgba(37,99,235,.2); }
 
-  .verdict-conf {
-    font-size: .82rem;
-    color: var(--ink2);
-    margin-top: 4px;
-  }
-  .verdict-conf strong { color: var(--ink); }
-
-  /* provision card */
-  .provision-card {
-    border-radius: 10px;
-    padding: 20px;
-    background: #f0f4ff;
-    border: 1.5px solid #ccd9ff;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .provision-title {
-    font-size: .72rem;
-    font-weight: 600;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: .08em;
-  }
-  .provision-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-  .provision-tag {
-    font-size: .78rem;
-    padding: 4px 11px;
-    border-radius: 20px;
-    background: rgba(37,99,235,.1);
-    color: var(--accent2);
-    font-weight: 500;
-    border: 1px solid rgba(37,99,235,.2);
-  }
-  .provision-none { font-size: .85rem; color: var(--ink3); font-style: italic; }
-
-  /* score bars */
-  .scores {
-    margin-top: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+  .scores { margin-top: 16px; display: flex; flex-direction: column; gap: 10px; }
   .score-row { display: flex; flex-direction: column; gap: 4px; }
   .score-meta { display: flex; justify-content: space-between; align-items: baseline; }
-  .score-name {
-    font-size: .82rem;
-    font-weight: 500;
-    color: var(--ink2);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .score-icon { font-size: .9rem; }
-  .score-pct { font-size: .82rem; font-weight: 600; color: var(--ink); }
-  .bar-track {
-    height: 7px;
-    background: var(--border);
-    border-radius: 4px;
-    overflow: hidden;
-  }
-  .bar-fill {
-    height: 100%;
-    border-radius: 4px;
-    transition: width .6s cubic-bezier(.4,0,.2,1);
-  }
+  .score-name { font-size: .82rem; font-weight: 500; color: var(--ink2); display: flex; align-items: center; gap: 6px; }
+  .bar-track { height: 7px; background: var(--border); border-radius: 4px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 4px; transition: width .6s cubic-bezier(.4,0,.2,1); }
   .bar-neg { background: var(--neg-bar); }
   .bar-neu { background: var(--neu-bar); }
   .bar-pos { background: var(--pos-bar); }
 
-  /* ── Stats strip ── */
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
-    margin-top: 32px;
-  }
-  .stat {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 18px 20px;
-    box-shadow: var(--shadow);
-  }
-  .stat-value {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--ink);
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-  .stat-label {
-    font-size: .75rem;
-    color: var(--ink3);
-    font-weight: 400;
-    line-height: 1.4;
-  }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 32px; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; box-shadow: var(--shadow); }
+  .stat-value { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--ink); line-height: 1; margin-bottom: 4px; }
+  .stat-label { font-size: .75rem; color: var(--ink3); line-height: 1.4; }
 
-  /* ── Footer ── */
-  footer {
-    background: var(--ink);
-    color: #64748b;
-    text-align: center;
-    padding: 24px 40px;
-    font-size: .8rem;
-    line-height: 1.7;
-  }
+  footer { background: var(--ink); color: #64748b; text-align: center; padding: 24px 40px; font-size: .8rem; line-height: 1.7; }
   footer a { color: #60a5fa; text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
 
-  /* ── Spinner ── */
-  .spinner {
-    width: 16px; height: 16px;
-    border: 2px solid rgba(255,255,255,.4);
-    border-top-color: #fff;
-    border-radius: 50%;
-    animation: spin .6s linear infinite;
-    display: none;
-  }
+  .spinner { width: 16px; height: 16px; border: 2px solid rgba(255,255,255,.4); border-top-color: #fff; border-radius: 50%; animation: spin .6s linear infinite; display: none; }
   @keyframes spin { to { transform: rotate(360deg); } }
   .loading .spinner { display: inline-block; }
   .loading .btn-text { display: none; }
 
-  /* ── Responsive ── */
   @media (max-width: 600px) {
-    header { padding: 0 18px; }
-    .hero { padding: 44px 20px 56px; }
-    main { padding: 0 14px; margin-top: -24px; }
-    .card-body { padding: 18px 18px 22px; }
     .result-grid { grid-template-columns: 1fr; }
     .stats { grid-template-columns: 1fr 1fr; }
   }
@@ -441,32 +184,24 @@
 <body>
 
 <header>
-  <div class="logo">🇳🇬 <span>TaxSentiment</span> NG
-    <span class="badge">BETA</span>
-  </div>
+  <div class="logo">🇳🇬 <span>TaxSentiment</span> NG <span class="badge">BETA</span></div>
   <div style="font-size:.78rem;color:#475569;">Research Demo · RoBERTa</div>
 </header>
 
 <div class="hero">
   <div class="hero-flag">🇳🇬</div>
   <h1>How does Nigeria feel about the <em>2025 Tax Reform Act?</em></h1>
-  <p>Analyse public sentiment toward Nigeria's landmark tax legislation using a fine-tuned transformer model trained on 2,197 Nigerian tweets.</p>
+  <p>Analyse public sentiment toward Nigeria's landmark tax legislation using your fine-tuned model.</p>
 </div>
 
 <main>
   <div class="card">
-    <div class="card-header">
-      <div class="dot"></div>
-      <h2>Sentiment Analyser</h2>
-    </div>
+    <div class="card-header"><div class="dot"></div><h2>Sentiment Analyser</h2></div>
     <div class="card-body">
-
       <div class="input-wrap">
-        <textarea id="inputText" maxlength="512"
-          placeholder="Enter a comment, tweet, or opinion about the 2025 Nigeria Tax Reform Act…"></textarea>
+        <textarea id="inputText" maxlength="512" placeholder="Enter a comment about the 2025 Tax Reform Act…"></textarea>
         <span class="char-count"><span id="charCount">0</span> / 512</span>
       </div>
-
       <div class="controls">
         <button class="btn btn-secondary" onclick="clearAll()">Clear</button>
         <button class="btn btn-primary" id="analyseBtn" onclick="analyse()">
@@ -478,7 +213,6 @@
       <div class="examples-label">Try an example</div>
       <div class="examples-grid" id="examplesGrid"></div>
 
-      <!-- Results -->
       <div class="results" id="results">
         <div class="result-grid">
           <div class="verdict" id="verdictCard">
@@ -491,117 +225,59 @@
             <div class="provision-tags" id="provisionTags"></div>
           </div>
         </div>
-
         <div class="scores" id="scoresEl"></div>
       </div>
-
     </div>
   </div>
 
-  <!-- Dataset stats -->
   <div class="stats">
-    <div class="stat">
-      <div class="stat-value">2,197</div>
-      <div class="stat-label">Tweets in training corpus</div>
-    </div>
-    <div class="stat">
-      <div class="stat-value" style="color:var(--neg)">87.9%</div>
-      <div class="stat-label">Negative sentiment in dataset</div>
-    </div>
-    <div class="stat">
-      <div class="stat-value" style="color:var(--accent)">0.607</div>
-      <div class="stat-label">Macro-F1 (RoBERTa)</div>
-    </div>
-    <div class="stat">
-      <div class="stat-value">p=0.000</div>
-      <div class="stat-label">Significance vs BiLSTM baseline</div>
-    </div>
+    <div class="stat"><div class="stat-value">2,197</div><div class="stat-label">Training Corpus</div></div>
+    <div class="stat"><div class="stat-value" style="color:var(--neg)">87.9%</div><div class="stat-label">Negative Bias in Data</div></div>
+    <div class="stat"><div class="stat-value" style="color:var(--accent)">0.607</div><div class="stat-label">Macro-F1 Score</div></div>
+    <div class="stat"><div class="stat-value">p=0.000</div><div class="stat-label">Statistical Significance</div></div>
   </div>
 </main>
 
 <footer>
-  Research by <strong style="color:#e2e8f0;">Ezerioha Ifeanyi Emmanuel</strong> · 
-  Fine-tuned <code>cardiffnlp/twitter-roberta-base-sentiment-latest</code> · 
-  <a href="https://colab.research.google.com/drive/1Z1sNgzHkm_0knCBgYkcZ6hMpK0kP9SCR" target="_blank">Notebook</a> · 
-  <a href="https://huggingface.co/spaces/Godwithus/nigeria-tax-reform-sentiment" target="_blank">HuggingFace Space</a><br/>
-  Dataset: Nigerian Twitter · July–September 2025 · 2025 Tax Reform Act
+  Research by <strong>Ezerioha Ifeanyi Emmanuel</strong> · 
+  Powered by your Fine-tuned Model on <a href="https://huggingface.co/Godwithus/nigeria-tax-reform-sentiment" target="_blank">Hugging Face</a>
 </footer>
 
 <script>
-// ── Examples ──────────────────────────────────────────────────────────────────
+// --- CONFIG: Update this with your model ID ---
+const MODEL_ID = "Godwithus/nigeria-tax-reform-sentiment"; 
+
 const EXAMPLES = [
   "This 4% development levy on top of everything is too much for businesses to survive.",
   "The SME exemption threshold is a welcome move — small businesses can finally breathe.",
   "Government will collect the taxes and loot everything as usual. Nothing will change.",
   "VAT reform could streamline compliance if properly implemented by FIRS.",
-  "Crypto taxation was inevitable. At least there is now some clarity on digital assets.",
   "Ordinary workers already pay PAYE and now even more deductions? How are we supposed to manage?",
 ];
 
 const PROVISIONS = {
-  "Development Levy":      ["development levy","tetfund","nitda","education levy"],
-  "Digital Asset Tax":     ["crypto","bitcoin","nft","blockchain","digital asset","virtual asset"],
-  "SME Exemptions":        ["sme","small business","vat exemption","startup","turnover"],
-  "Income & Personal Tax": ["income tax","paye","salary","withholding","25 million","personal tax"],
-  "VAT & Consumption":     ["vat","value added","consumption tax","goods and services"],
-  "Governance":            ["corrupt","accountability","steal","loot","transparent","embezzle"],
-  "Implementation":        ["implement","enforcement","firs","compliance","infrastructure"],
-  "Economic Burden":       ["burden","hardship","poverty","afford","cost of living","inflation","food"],
+  "Development Levy": ["development levy","tetfund","nitda","education levy"],
+  "Digital Asset Tax": ["crypto","bitcoin","nft","blockchain","digital asset"],
+  "SME Exemptions": ["sme","small business","startup","turnover"],
+  "Income Tax": ["income tax","paye","salary","withholding"],
+  "VAT": ["vat","value added","consumption tax"],
+  "Governance": ["corrupt","accountability","steal","loot"],
 };
 
-// ── Build example chips ────────────────────────────────────────────────────────
+// Build examples
 const grid = document.getElementById('examplesGrid');
 EXAMPLES.forEach(ex => {
   const chip = document.createElement('button');
   chip.className = 'example-chip';
-  chip.title = ex;
-  chip.textContent = ex.length > 52 ? ex.slice(0,52) + '…' : ex;
-  chip.onclick = () => {
-    document.getElementById('inputText').value = ex;
-    updateChar();
-    analyse();
-  };
+  chip.textContent = ex.length > 50 ? ex.slice(0,50) + '...' : ex;
+  chip.onclick = () => { document.getElementById('inputText').value = ex; updateChar(); analyse(); };
   grid.appendChild(chip);
 });
 
-// ── Char counter ──────────────────────────────────────────────────────────────
 const ta = document.getElementById('inputText');
-function updateChar() {
-  document.getElementById('charCount').textContent = ta.value.length;
-}
+function updateChar() { document.getElementById('charCount').textContent = ta.value.length; }
 ta.addEventListener('input', updateChar);
 
-// ── Provision detection ────────────────────────────────────────────────────────
-function detectProvisions(text) {
-  const lower = text.toLowerCase();
-  return Object.entries(PROVISIONS)
-    .filter(([, kws]) => kws.some(kw => lower.includes(kw)))
-    .map(([name]) => name);
-}
-
-// ── Simulated inference (client-side heuristic for demo) ─────────────────────
-// In production this calls the HF Inference API. For the standalone demo
-// we run a lightweight keyword-weighted heuristic so the page works offline.
-
-const NEG_WORDS = ["loot","steal","kill","too much","corrupt","hardship","poverty","unfair",
-  "wrong","fail","bad","terrible","why","how","never","burden","afraid","enough",
-  "always","same","nothing","doubt","angry","frustrat","can't","cannot","won't"];
-const POS_WORDS = ["welcome","good","great","excellent","right","correct","relief",
-  "better","improve","support","nice","fair","finally","clarity","breathe","hope"];
-
-function heuristicPredict(text) {
-  const lower = text.toLowerCase();
-  let neg = 0.1, pos = 0.1, neu = 0.05;
-  NEG_WORDS.forEach(w => { if (lower.includes(w)) neg += 0.18; });
-  POS_WORDS.forEach(w => { if (lower.includes(w)) pos += 0.18; });
-  const total = neg + pos + neu;
-  neg /= total; pos /= total; neu /= total;
-  // normalise so they sum to 1 after a bit of smoothing
-  const sum = neg + pos + neu;
-  return { Negative: neg/sum, Positive: pos/sum, Neutral: neu/sum };
-}
-
-// ── Main analyse function ──────────────────────────────────────────────────────
 async function analyse() {
   const text = ta.value.trim();
   if (!text) return;
@@ -610,117 +286,68 @@ async function analyse() {
   btn.disabled = true;
   btn.classList.add('loading');
 
-  // Attempt HF Inference API (will silently fall back to heuristic if blocked)
-  let scores;
   try {
-    const resp = await Promise.race([
-      fetchHF(text),
-      new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 5000))
-    ]);
-    scores = resp;
-  } catch {
-    scores = heuristicPredict(text);
+    const scores = await fetchHF(text);
+    renderResults(text, scores);
+  } catch (e) {
+    alert("Error connecting to Hugging Face. Ensure the model is Public.");
+    console.error(e);
+  } finally {
+    btn.disabled = false;
+    btn.classList.remove('loading');
   }
-
-  renderResults(text, scores);
-  btn.disabled = false;
-  btn.classList.remove('loading');
 }
 
 async function fetchHF(text) {
-  const MODEL = "cardiffnlp/twitter-roberta-base-sentiment-latest";
-  const r = await fetch(`https://api-inference.huggingface.co/models/${MODEL}`, {
+  const r = await fetch(`https://api-inference.huggingface.co/models/${MODEL_ID}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ inputs: preprocess(text) })
+    body: JSON.stringify({ inputs: text, options: { wait_for_model: true } })
   });
-  if (!r.ok) throw new Error("HF API error");
+
+  if (!r.ok) throw new Error("API Failure");
   const data = await r.json();
-  // HF returns [{label, score}] array
-  const map = {};
-  (Array.isArray(data[0]) ? data[0] : data).forEach(d => {
-    const label = d.label === "LABEL_0" ? "Negative"
-                : d.label === "LABEL_1" ? "Neutral"
-                : d.label === "LABEL_2" ? "Positive"
-                : d.label;
-    map[label] = d.score;
+  const raw = Array.isArray(data[0]) ? data[0] : data;
+  
+  const map = { "Negative": 0, "Neutral": 0, "Positive": 0 };
+  raw.forEach(d => {
+    let l = d.label;
+    if (l === "LABEL_0" || l.toLowerCase().includes("neg")) map["Negative"] = d.score;
+    else if (l === "LABEL_1" || l.toLowerCase().includes("neu")) map["Neutral"] = d.score;
+    else if (l === "LABEL_2" || l.toLowerCase().includes("pos")) map["Positive"] = d.score;
   });
   return map;
 }
 
-function preprocess(text) {
-  return text.split(" ").map(t => {
-    if (t.startsWith("@") && t.length > 1) return "@user";
-    if (t.startsWith("http")) return "http";
-    return t;
-  }).join(" ");
-}
-
-// ── Render ────────────────────────────────────────────────────────────────────
-const CONFIG = {
-  Negative: { cls:"neg", icon:"🔴", bar:"bar-neg" },
-  Neutral:  { cls:"neu", icon:"🟡", bar:"bar-neu" },
-  Positive: { cls:"pos", icon:"🟢", bar:"bar-pos" },
-};
-
 function renderResults(text, scores) {
-  // Determine winner
   const winner = Object.entries(scores).sort((a,b) => b[1]-a[1])[0];
   const label = winner[0];
-  const conf  = winner[1];
-  const cfg   = CONFIG[label];
-  const confLabel = conf > .75 ? "High" : conf > .50 ? "Moderate" : "Low";
+  const conf = winner[1];
+  
+  const cfg = {
+    Negative: { cls: "neg", icon: "🔴" },
+    Neutral:  { cls: "neu", icon: "🟡" },
+    Positive: { cls: "pos", icon: "🟢" }
+  }[label];
 
-  // Verdict card
   const vc = document.getElementById('verdictCard');
   vc.className = `verdict ${cfg.cls}`;
   document.getElementById('verdictText').textContent = `${cfg.icon} ${label}`;
-  document.getElementById('verdictConf').innerHTML =
-    `Confidence: <strong>${(conf*100).toFixed(1)}%</strong> &nbsp;·&nbsp; ${confLabel}`;
+  document.getElementById('verdictConf').innerHTML = `Confidence: <strong>${(conf*100).toFixed(1)}%</strong>`;
 
-  // Provisions
-  const provs = detectProvisions(text);
-  const pt = document.getElementById('provisionTags');
-  pt.innerHTML = provs.length
-    ? provs.map(p => `<span class="provision-tag">${p}</span>`).join('')
-    : '<span class="provision-none">No specific provision detected</span>';
+  const provs = Object.entries(PROVISIONS).filter(([k, v]) => v.some(word => text.toLowerCase().includes(word))).map(e => e[0]);
+  document.getElementById('provisionTags').innerHTML = provs.length ? provs.map(p => `<span class="provision-tag">${p}</span>`).join('') : "None detected";
 
-  // Score bars
-  const scoresEl = document.getElementById('scoresEl');
-  const order = ["Negative","Neutral","Positive"];
-  scoresEl.innerHTML = order.map(lbl => {
-    const pct = ((scores[lbl] || 0) * 100).toFixed(1);
-    const c   = CONFIG[lbl];
-    return `
-      <div class="score-row">
-        <div class="score-meta">
-          <span class="score-name"><span class="score-icon">${c.icon}</span>${lbl}</span>
-          <span class="score-pct">${pct}%</span>
-        </div>
-        <div class="bar-track">
-          <div class="bar-fill ${c.bar}" style="width:${pct}%"></div>
-        </div>
-      </div>`;
+  document.getElementById('scoresEl').innerHTML = ["Negative","Neutral","Positive"].map(l => {
+    const p = (scores[l]*100).toFixed(1);
+    const b = l === "Negative" ? "bar-neg" : l === "Neutral" ? "bar-neu" : "bar-pos";
+    return `<div class="score-row"><div class="score-meta"><span>${l}</span><span>${p}%</span></div><div class="bar-track"><div class="bar-fill ${b}" style="width:${p}%"></div></div></div>`;
   }).join('');
 
-  // Show results
-  const res = document.getElementById('results');
-  res.classList.remove('visible');
-  void res.offsetWidth; // force reflow for animation replay
-  res.classList.add('visible');
-  res.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  document.getElementById('results').classList.add('visible');
 }
 
-function clearAll() {
-  ta.value = '';
-  updateChar();
-  document.getElementById('results').classList.remove('visible');
-}
-
-// ── Keyboard shortcut: Ctrl/Cmd+Enter ────────────────────────────────────────
-ta.addEventListener('keydown', e => {
-  if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') analyse();
-});
+function clearAll() { ta.value = ''; updateChar(); document.getElementById('results').classList.remove('visible'); }
 </script>
 </body>
 </html>
